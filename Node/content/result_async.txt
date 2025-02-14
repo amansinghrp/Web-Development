@@ -1,0 +1,2 @@
+This is the already written data added new line.
+The concatenated data: Hi there, this is the first text file + Hi there, this is the second text file
