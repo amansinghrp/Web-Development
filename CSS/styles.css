@@ -1,0 +1,65 @@
+body
+{
+	background: black;
+	color: white;
+}
+h2
+{
+	font-family:sans-serif;
+	font-size: 20pt;
+}
+h3
+{
+	font-family:sans-serif;
+	font-size: 20pt;
+}
+p
+{		
+	font-family: monospace;
+	font-size: 15pt ;
+}
+a
+{
+	color: gray;
+	text-decoration: none;
+}
+a:hover
+{
+	color: black;
+	background: white;
+}
+.indent
+{
+	margin-left: 15px;
+}
+
+.gap_below
+{
+	margin-bottom: 25px;
+}
+
+.green_link:hover
+{
+	color: green;
+	background: gray;
+}
+
+@media (min-width: 600px)
+{
+	.responsive
+	{
+		display: inline-block;
+		width: 250px;
+		border: 1px solid red;
+	}
+}
+
+@media (min-width: 1000px)
+{
+	.responsive
+	{
+		display: inline-block;
+		width: 450px;
+		border: 1px solid white;		
+	}
+}

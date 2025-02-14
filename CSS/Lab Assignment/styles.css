@@ -1,0 +1,17 @@
+/*
+* This is a comment that the browser will ignore,
+* Put your CSS code into this file
+*/
+body
+{
+	background: blue;/*Change the background color of body tag*/
+}
+h1
+{
+	font-family: monospaced;/*Changing the font style*/
+	background: black;/*change the background color to black*/
+	color: white;/*change the text color to white*/
+	font-size: 50px;/*Change the text size to 50 px.*/
+	margin-left: 20px;/*set the left margin to 20px.*/
+	margin-top: 10px;/*set the top margin to 10px.*/
+}
