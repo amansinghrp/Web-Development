@@ -1,0 +1,14 @@
+{
+  "name": "node_aman",
+  "version": "1.0.0",
+  "description": "my node practise",
+  "main": "10_httpBasics.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aman Singh",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
