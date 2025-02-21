@@ -4,11 +4,15 @@
   "description": "my node practise",
   "main": "10_httpBasics.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "nodemon app.js",
+    "dev" : "nodemon app.js"
   },
   "author": "Aman Singh",
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
