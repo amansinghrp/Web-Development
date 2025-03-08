@@ -15,6 +15,7 @@
     "chokidar": "^3.6.0",
     "concat-map": "^0.0.1",
     "debug": "^4.4.0",
+    "express": "4.17",
     "fill-range": "^7.1.1",
     "glob-parent": "^5.1.2",
     "has-flag": "^3.0.0",
@@ -37,7 +38,7 @@
     "undefsafe": "^2.0.5"
   },
   "scripts": {
-    "start" : "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "author": "Aman Singh",
   "license": "ISC"
