@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        #sidebar {
+            width: 20%;
+            background: #f4f4f4;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+        #content {
+            width: 80%;
+            border: none;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href="navigationframes.html" target="content">Navigation Frames</a></li>
+            <li><a href="floatingframes.html" target="content">Floating Frames</a></li>
+            <li><a href="mixedframe.html" target="content">Mixed Frames</a></li>
+            <li><a href="noframe.html" target="content">No Frames</a></li>
+        </ul>
+    </div>
+
+    <iframe id="content" name="content" src="default.html"></iframe>
+
+</body>
+</html>

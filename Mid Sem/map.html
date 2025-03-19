@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrate</title>
+    <script>
+        function myfun(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            document.getElementById("res").innerHTML = `(${x}, ${y})`;
+        }
+        
+        function over() {
+            document.getElementById("res").innerHTML = "";
+        }
+    </script>
+</head>
+
+<body>
+    <img src="image.jpg" usemap="#mymap" onmousemove="myfun(event)" />
+
+    <map name="mymap">
+        <area shape="rect" coords="17,44,71,93" title="Square" href="square.html" alt="clickable area">
+        <area shape="rect" coords="86,44,174,92" title="Rectangle" href="rectangle.html" alt="clickable area">
+        <area shape="poly" coords="220,41,256,71,220,102,183,71" alt="clickable area" href="rhombus.html" title="Rhombus">
+        <area shape="poly" coords="291,38,320,87,256,87" alt="clickable area" href="tri.html" title="Triangle"> 
+    </map>
+
+    <p id="res"></p>
+</body>
+
+</html>

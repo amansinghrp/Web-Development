@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixed Frames</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        #left {
+            width: 25%;
+            background: #eee;
+            text-align: center;
+            padding: 10px;
+        }
+        #right {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+        }
+        .row {
+            flex: 1;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="left">
+        <h3>Image</h3>
+        <img src="image.jpg" width="100%">
+    </div>
+
+    <div id="right">
+        <iframe class="row" src="resume.html"></iframe>
+        <iframe class="row" src="timetable.html"></iframe>
+    </div>
+
+</body>
+</html>

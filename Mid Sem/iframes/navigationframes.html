@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Frames</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        #nav {
+            width: 40%;
+            background: #ddd;
+            padding: 20px;
+        }
+        #frame {
+            width: 60%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="nav">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href="mixedframe.html" target="navContent">Mixed Frames</a></li>
+            <li><a href="floatingframes.html" target="navContent">Floating Frames</a></li>
+        </ul>
+    </div>
+
+    <iframe id="frame" name="navContent" src="default.html"></iframe>
+
+</body>
+</html>
