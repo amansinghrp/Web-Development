@@ -1,67 +1,45 @@
 const express = require('express')
-const app = express();
-const {products} = require('./data.js')
+const app = express()
+const logger = require('./logger.js')
+const authorize = require('./authorize.js')
+// app.get('/', logger,(req, res)=>{
+//     res.send("Home");
+// })
 
-app.get('/', (req, res)=>{
-    res.send('<h1>Home Page</h1><br><a href = "/api/products">Products</a>');
-})
-app.get('/api/products', (req, res) =>{
-    const newProduct = products.map((product) =>{
-        const {id, name, image} = product
-        return {id, name, image};
-    })
+// app.get('/about', logger,(req, res)=>{
+//     res.send("About")
+// })
 
-    res.json(newProduct);
-})
+// app.all("*", logger,(req,res)=>{
+//     res.send("Sorry mil nahi rha !!!")
+// })
 
-//setting up the route params
-app.get('/api/products/:productID', (req, res) =>{
-    console.log(req.params);
-    const {productID} = req.params;
-    const singleProduct = products.find((product) =>{
-        return product.id === Number(productID)
-    })
-    // console.log(singleProduct);
-    if(!singleProduct){
-        res.status(404).send("<h1>OOPS!!Product not found</h1>")
-    }
-    res.json(singleProduct); 
+// app.use('/aman',logger)
+
+app.use([authorize, logger])
+app.get('/',(req, res)=>{
+    res.send("Home");
 })
 
-//a little nested request parameters
-app.get('/api/products/:productId/reviews/:reviewID', (req, res) =>{
-    console.log(req.params);
-    res.send("OKOKOK");    
+app.get('/about',(req, res)=>{
+    res.send("About")
+})
+
+app.get('/aman/resume',(req, res)=>{
+    console.log(req.user);
+    res.send("resume")
+})
+
+app.get('/aman/image',(req, res)=>{
+    res.send("iamge")
+})
+
+app.all('*',(req,res)=>{
+    res.send("Sorry mil nahi rha !!!")
 })
 
 
-//Query String parameters
-app.get('/api/v1/query', (req, res) => {
-    const { search, limit } = req.query;
-    let sortedProd = [...products];
-
-    if (search) {
-        sortedProd = sortedProd.filter((product) => {
-            return product.name.toLowerCase().startsWith(search.toLowerCase());
-        });
-    }
-
-    if (limit) {
-        sortedProd = sortedProd.slice(0, Number(limit));
-    }
-
-    if (sortedProd.length < 1) {
-        return res.status(200).json({ success: true, data: [] });
-    }
-
-    res.json(sortedProd);
-});
-
-
-app.all('*', (req, res)=>{
-    res.status(404).send("<h1>Page Not Found!!</h1>")
-})
 
 app.listen(5000, ()=>{
-    console.log('server is listening on port 5000...');
+    console.log("Server runnign on port 5000.....");
 })
