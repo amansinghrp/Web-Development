@@ -35,6 +35,29 @@ app.get('/api/products/:productId/reviews/:reviewID', (req, res) =>{
 })
 
 
+//Query String parameters
+//Query String parameters
+app.get('/api/v1/query', (req, res) => {
+    const { search, limit } = req.query;
+    let sortedProd = [...products];
+
+    if (search) {
+        sortedProd = sortedProd.filter((product) => {
+            return product.name.toLowerCase().startsWith(search.toLowerCase());
+        });
+    }
+
+    if (limit) {
+        sortedProd = sortedProd.slice(0, Number(limit));
+    }
+
+    if (sortedProd.length < 1) {
+        return res.status(200).json({ success: true, data: [] });
+    }
+
+    res.json(sortedProd);
+});
+
 app.all('*', (req, res)=>{
     res.status(404).send("<h1>Page Not Found!!</h1>")
 })

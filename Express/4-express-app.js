@@ -5,11 +5,11 @@ const app = express();
 app.use(express.static('./public'))
 
 app.get('/', (req, res)=>{
-    // res.status(200).sendFile(path.resolve(__dirname, './1-http-app/index.html'));
-    //OR
-    //add index.html also to thepublic folder as it is also a static content
-    //OR
-    //Server side rendering
+    res.status(200).sendFile(path.resolve(__dirname, './1-http-app/index.html'));
+    // OR
+    // add index.html also to thepublic folder as it is also a static content
+    // OR
+    // Server side rendering
 })
 
 app.all('*', (req, res)=>{
